@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body style="background-color: navy;">
+<DIV style="background-color: white; margin-left: 600px; margin-right: 600px; margin-bottom: 20px; margin-top:308px; padding-top:5px; padding-bottom: 40px">
+<form style="text-align: center;" th:action="@{/login}" th:object="${model}" method="post">
+
+<h1>Login</h1>
+<div th:if="${param.wrongcredentials}">
+
+<p Style="color: red">Wrong Credentials</p>
+
+</div>
+
+<div th:if="${param.loggedout}">
+
+<p Style="color: green;">Logged Out</p>
+
+</div>
+
+<label style="margin-left: 50px" for="username">Username:</label>
+<input style="margin-right: 102px" class="username" type="text" th:field="*{username}">
+
+<br><br>
+<label style="margin-left: 50px" for="password">Password: </label>
+<input style="margin-right: 100px" class="password" type="password"  th:field="*{password}">  
+<br></br>
+<button type="submit">Login</button>
+
+</form>
+</DIV>
+</body>
+</html>
+
+
+
